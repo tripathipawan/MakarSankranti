@@ -1,0 +1,148 @@
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  overflow:hidden;
+  font-family:system-ui, sans-serif;
+}
+
+/* 🌅 SKY */
+.scene{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:
+    radial-gradient(circle at 70% 20%, #fff176 0%, transparent 35%),
+    linear-gradient(to top, #ffedd8, #8ecae6, #219ebc);
+}
+
+/* ☀ SUN */
+.sun{
+  position:absolute;
+  top:6%;
+  right:12%;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff59d,#ffb703);
+  box-shadow:
+    0 0 40px #fff59d,
+    0 0 80px #ffb703;
+  animation:sunPulse 6s infinite ease-in-out;
+}
+
+@keyframes sunPulse{
+  50%{transform:scale(1.08)}
+}
+
+/* ☁ CLOUD */
+.cloud{
+  position:absolute;
+  width:240px;
+  height:75px;
+  background:#fff;
+  border-radius:50px;
+  opacity:.9;
+}
+
+.cloud:before,.cloud:after{
+  content:'';
+  position:absolute;
+  background:#fff;
+  border-radius:50%;
+}
+.cloud:before{
+  width:90px;height:90px;top:-45px;left:30px;
+}
+.cloud:after{
+  width:110px;height:110px;top:-55px;right:30px;
+}
+@keyframes cloudMove{
+  from{transform:translateX(0)}
+  to{transform:translateX(140vw)}
+}
+
+/* 🌳 TREES */
+.tree{
+  position:absolute;
+  bottom:18%;
+  width:30px;
+  height:70px;
+  background:#6d4c41;
+}
+.tree:before{
+  content:'';
+  position:absolute;
+  bottom:50px;
+  left:-35px;
+  width:100px;
+  height:80px;
+  background:#2a9d8f;
+  border-radius:50%;
+  box-shadow:0 0 20px #2a9d8f;
+}
+
+/* 🏠 HOUSES */
+.house{
+  position:absolute;
+  bottom:18%;
+  width:90px;
+  height:60px;
+  background:#ffb703;
+  box-shadow:0 0 15px rgba(255,255,255,.5);
+}
+.house:before{
+  content:'';
+  position:absolute;
+  top:-35px;
+  left:-10px;
+  width:110px;
+  height:35px;
+  background:#e63946;
+  clip-path:polygon(50% 0,100% 100%,0 100%);
+}
+
+/* 🌍 GROUND */
+.ground{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:18%;
+  background:linear-gradient(to top,#2d6a4f,#74c69d);
+}
+
+/* 🪁 KITE */
+.kite{
+  position:absolute;
+  width:50px;
+  height:50px;
+  transform:rotate(45deg);
+  border-radius:6px;
+  background:linear-gradient(135deg,#ff006e,#ffd166,#00f5d4);
+  box-shadow:
+    0 0 15px #ff006e,
+    0 0 30px #ffd166;
+}
+
+/* 🧵 ROPE */
+.rope{
+  left: 20px;
+  position:absolute;
+  pointer-events:none;
+}
+
+
+/* 🎉 TEXT */
+.text{
+  position:absolute;
+  bottom:3%;
+  width:100%;
+  text-align:center;
+  font-size:42px;
+  font-weight:800;
+  color:#00856d;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 25px #ff006e,
+    0 0 45px #ffd166;
+}
